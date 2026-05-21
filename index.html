@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ibtissam 💗</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+overflow:hidden;
+background:linear-gradient(135deg,#ffd6ec,#ffbddb,#ff9fcb);
+height:100vh;
+color:white;
+position:relative;
+}
+
+/* pages */
+
+.page{
+display:none;
+height:100vh;
+width:100%;
+position:absolute;
+top:0;
+left:0;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+padding:30px;
+animation:fade 1s ease;
+}
+
+.page.active{
+display:flex;
+}
+
+/* fade animation */
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* stars */
+
+.star{
+position:absolute;
+width:2px;
+height:2px;
+background:white;
+border-radius:50%;
+opacity:0.8;
+animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+from{
+opacity:0.2;
+}
+to{
+opacity:1;
+}
+}
+
+/* hearts */
+
+.heart{
+position:absolute;
+bottom:-20px;
+font-size:20px;
+animation:floatUp 6s linear infinite;
+pointer-events:none;
+}
+
+@keyframes floatUp{
+0%{
+transform:translateY(0);
+opacity:0;
+}
+20%{
+opacity:1;
+}
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+}
+
+/* text */
+
+.text{
+font-size:2rem;
+max-width:900px;
+line-height:1.6;
+min-height:140px;
+text-shadow:0 0 10px rgba(255,255,255,0.5);
+}
+
+/* kitty */
+
+.kitty{
+font-size:4rem;
+margin-bottom:20px;
+animation:floatKitty 3s ease-in-out infinite;
+}
+
+@keyframes floatKitty{
+0%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-10px);
+}
+100%{
+transform:translateY(0);
+}
+}
+
+/* switch */
+
+.switch{
+margin-top:40px;
+width:90px;
+height:45px;
+background:white;
+border-radius:50px;
+position:relative;
+cursor:pointer;
+box-shadow:0 0 15px rgba(255,255,255,0.5);
+}
+
+.circle{
+width:37px;
+height:37px;
+background:#ff69b4;
+border-radius:50%;
+position:absolute;
+left:4px;
+top:4px;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:18px;
+transition:0.4s;
+}
+
+.switch:hover .circle{
+left:48px;
+}
+
+/* password */
+
+input{
+padding:15px;
+border:none;
+border-radius:30px;
+outline:none;
+width:250px;
+text-align:center;
+font-size:1rem;
+margin-top:20px;
+}
+
+button{
+padding:14px 28px;
+border:none;
+border-radius:30px;
+margin-top:20px;
+background:white;
+color:#ff4fa0;
+font-weight:bold;
+cursor:pointer;
+}
+
+/* final button */
+
+.download{
+margin-top:40px;
+padding:18px 35px;
+background:white;
+color:#ff4fa0;
+border-radius:40px;
+text-decoration:none;
+font-size:1.2rem;
+font-weight:bold;
+box-shadow:0 0 20px rgba(255,255,255,0.5);
+transition:0.3s;
+}
+
+.download:hover{
+transform:scale(1.05);
+}
+
+.small{
+margin-top:20px;
+font-size:0.95rem;
+opacity:0.8;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- MUSIC -->
+
+<audio id="music" loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- PASSWORD PAGE -->
+
+<div class="page active" id="passwordPage">
+
+<div class="kitty">🎀</div>
+
+<div class="text" id="passwordText">
+Only Ibtissam can unlock this little world 💗
+</div>
+
+<input type="password" id="passwordInput" placeholder="Password">
+
+<button onclick="checkPassword()">
+Unlock 💗
+</button>
+
+<div class="small">
+hint → cute nickname 😭🤍
+</div>
+
+</div>
+
+<!-- PAGE 1 -->
+
+<div class="page">
+<div class="kitty">💗</div>
+<div class="text"></div>
+
+<div class="switch" onclick="nextPage()">
+<div class="circle">💞</div>
+</div>
+</div>
+
+<!-- PAGE 2 -->
+
+<div class="page">
+<div class="kitty">🎀</div>
+<div class="text"></div>
+
+<div class="switch" onclick="nextPage()">
+<div class="circle">🌸</div>
+</div>
+</div>
+
+<!-- PAGE 3 -->
+
+<div class="page">
+<div class="kitty">🤍</div>
+<div class="text"></div>
+
+<div class="switch" onclick="nextPage()">
+<div class="circle">💗</div>
+</div>
+</div>
+
+<!-- PAGE 4 -->
+
+<div class="page">
+<div class="kitty">💌</div>
+<div class="text"></div>
+
+<div class="switch" onclick="nextPage()">
+<div class="circle">✨</div>
+</div>
+</div>
+
+<!-- PAGE 5 -->
+
+<div class="page">
+<div class="kitty">🌸</div>
+<div class="text"></div>
+
+<div class="switch" onclick="nextPage()">
+<div class="circle">🤍</div>
+</div>
+</div>
+
+<!-- PAGE 6 -->
+
+<div class="page">
+<div class="kitty">💞</div>
+<div class="text"></div>
+
+<div class="switch" onclick="nextPage()">
+<div class="circle">💗</div>
+</div>
+</div>
+
+<!-- PAGE 7 -->
+
+<div class="page">
+<div class="kitty">🎀</div>
+<div class="text"></div>
+
+<div class="switch" onclick="nextPage()">
+<div class="circle">🌸</div>
+</div>
+</div>
+
+<!-- PAGE 8 -->
+
+<div class="page">
+<div class="kitty">🤍</div>
+<div class="text"></div>
+
+<div class="switch" onclick="nextPage()">
+<div class="circle">💞</div>
+</div>
+</div>
+
+<!-- PAGE 9 -->
+
+<div class="page">
+<div class="kitty">💗</div>
+<div class="text"></div>
+
+<div class="switch" onclick="nextPage()">
+<div class="circle">✨</div>
+</div>
+</div>
+
+<!-- FINAL PAGE -->
+
+<div class="page">
+
+<div class="kitty">🎀</div>
+
+<div class="text"></div>
+
+<a class="download" href="PUT_YOUR_DRIVE_LINK_HERE">
+Download Your Gift 📁
+</a>
+
+<div class="small">
+made with love for Ibtissam 💗
+</div>
+
+</div>
+
+<script>
+
+/* PASSWORD */
+
+const realPassword = "cutie patootie";
+
+function checkPassword(){
+
+let input = document.getElementById("passwordInput").value;
+
+if(input === realPassword){
+
+document.getElementById("passwordPage").classList.remove("active");
+
+pages[0].classList.add("active");
+
+document.getElementById("music").volume = 0.2;
+
+document.getElementById("music").play();
+
+typeCurrentText();
+
+}else{
+
+alert("wrong password 😭");
+
+}
+
+}
+
+/* MESSAGES */
+
+const messages = [
+
+"Since the day u came into my life everything started feeling softer warmer and somehow more alive",
+
+"I don’t think u realize how many times u save me just by existing",
+
+"Even on my worst days the thought of u still feels like home",
+
+"Loving u never felt difficult it felt natural like my heart already knew yours",
+
+"Every little moment with u becomes a memory I never want to lose",
+
+"And if one day the whole world turns against me I’d still be okay as long as I have u",
+
+"U became the peace I was searching for in places that could never love me back",
+
+"Sometimes I look at u and genuinely wonder how someone this beautiful found me",
+
+"No matter how much time passes I’ll still choose u in every version of my life",
+
+"So if this website becomes a small piece of our story then let it remind u forever that u were always my favorite person"
+
+];
+
+/* PAGES */
+
+let pages = document.querySelectorAll(".page:not(#passwordPage)");
+
+let current = 0;
+
+/* TYPE WRITER */
+
+function typeWriter(element,text){
+
+element.innerHTML = "";
+
+let i = 0;
+
+let interval = setInterval(()=>{
+
+element.innerHTML += text.charAt(i);
+
+i++;
+
+if(i >= text.length){
+
+clearInterval(interval);
+
+}
+
+},35);
+
+}
+
+/* TYPE CURRENT PAGE */
+
+function typeCurrentText(){
+
+typeWriter(
+
+pages[current].querySelector(".text"),
+
+messages[current]
+
+);
+
+}
+
+/* NEXT PAGE */
+
+function nextPage(){
+
+pages[current].classList.remove("active");
+
+current++;
+
+if(current < pages.length){
+
+pages[current].classList.add("active");
+
+typeCurrentText();
+
+}
+
+}
+
+/* FLOATING HEARTS */
+
+function createHeart(){
+
+let heart = document.createElement("div");
+
+heart.classList.add("heart");
+
+heart.innerHTML = ["💗","🤍","🎀","💞","🌸"][Math.floor(Math.random()*5)];
+
+heart.style.left = Math.random()*100 + "vw";
+
+heart.style.fontSize = (Math.random()*20+15) + "px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+
+heart.remove();
+
+},6000);
+
+}
+
+setInterval(createHeart,500);
+
+/* STARS */
+
+for(let i=0;i<120;i++){
+
+let star = document.createElement("div");
+
+star.classList.add("star");
+
+star.style.left = Math.random()*100 + "vw";
+
+star.style.top = Math.random()*100 + "vh";
+
+star.style.animationDuration = (Math.random()*3+1) + "s";
+
+document.body.appendChild(star);
+
+}
+
+</script>
+
+</body>
+</html>
